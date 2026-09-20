@@ -1,0 +1,5 @@
+.env
+node_modules
+dist
+# Data kesehatan pengguna — jangan di-commit
+data/

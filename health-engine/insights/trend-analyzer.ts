@@ -1,0 +1,1 @@
+export function trend(values:number[]){if(values.length<3)return 'Not enough data yet.';const change=values.at(-1)!-values[0];return change>5?'Trending upward':change<-5?'Trending downward':'Steady';}

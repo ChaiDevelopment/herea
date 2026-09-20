@@ -1,0 +1,1 @@
+export function gentleRecommendation(score?:number){if(score===undefined)return 'Not enough data yet.';return score<50?'Consider a quieter moment and your usual supportive routines today.':'Keep noticing the routines that help you feel steady.';}
