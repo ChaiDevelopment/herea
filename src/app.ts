@@ -22,6 +22,8 @@ export interface AppOptions {
 
 export function createApp(db: Database, opts: AppOptions) {
   const app = express();
+  // Di belakang proxy (Railway), percayai header X-Forwarded-For agar pembatas laju menghitung per pengunjung.
+  if (process.env.TRUST_PROXY) app.set('trust proxy', Number(process.env.TRUST_PROXY));
   const auth = createAuth(db, opts.jwtSecret);
   const authLimiter = opts.disableRateLimit
     ? (_q: unknown, _s: unknown, next: () => void) => next()
